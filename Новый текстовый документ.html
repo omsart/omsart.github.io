@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыка при нажатии</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        img {
+            cursor: pointer;
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <img src="your-image.jpg" alt="Нажми на меня" onclick="playAudio()">
+
+    <audio id="audio" src="your-music.mp3"></audio>
+
+    <script>
+        // Устанавливаем громкость на максимум при загрузке страницы
+        window.onload = function() {
+            var audio = document.getElementById("audio");
+            audio.volume = 1; // Максимальная громкость
+        };
+
+        // Функция для воспроизведения/паузы
+        function playAudio() {
+            var audio = document.getElementById("audio");
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>
